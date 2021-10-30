@@ -8,7 +8,6 @@ Estos archivos están sacados del repo prueba jenkins frontend local
 
 
 
-
 ## Configurar
 
 docker-compose up o docker-compose up -d (segundo plano)
