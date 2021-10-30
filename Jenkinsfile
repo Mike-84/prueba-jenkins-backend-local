@@ -13,9 +13,8 @@ pipeline {
                     sh "docker run -i --rm -v ${pwd}:/apps alpine/flake8:3.5.0 --max-line-length=120 *.py"
                     sh '''
                     cd backend
-                    cp Dockerfile /var/jenkins_home/workspace/backend-local_master@tmp/Dockerfile
+                    docker run --rm -i hadolint/hadolint < Dockerfile
                     '''
-                    sh "docker run --rm -i hadolint/hadolint < Dockerfile"
                 }
             }
         }
