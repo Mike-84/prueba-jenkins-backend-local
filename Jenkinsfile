@@ -11,6 +11,7 @@ pipeline {
                 script {
                     sh "cd backend"
                     sh "docker run -i --rm -v ${pwd}:/apps alpine/flake8:3.5.0 --max-line-length=120 *.py"
+                    sh "cd backend"
                     sh "docker run --rm -i hadolint/hadolint < Dockerfile"
                 }
             }
