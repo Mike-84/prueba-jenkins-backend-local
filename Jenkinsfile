@@ -22,12 +22,14 @@ pipeline {
         stage('test unitarios') {
             steps {
                 script {
-                    sh "cd backend"
-                    sh "docker build --no-cache -t backend-test -f Dockerfile.test ."
-                    sh "docker run -it --name backend-test backend-test"
-                    sh "docker cp backend-test:/app/test_results.xml ./test_results.xml"
-                    sh "docker rm backend-test"
-                    sh "cat test_results.xml"
+                    sh '''
+                    cd backend
+                    docker build --no-cache -t backend-test -f Dockerfile.test .
+                    docker run -it --name backend-test backend-test
+                    docker cp backend-test:/app/test_results.xml ./test_results.xml
+                    docker rm backend-test
+                    cat test_results.xml
+                    '''
                 }
             }
         }
