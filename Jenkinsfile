@@ -5,6 +5,7 @@ pipeline {
         label 'master'
     }
 
+    stages {
         stage('Ejecutar linters flake8 y hadolint') {
             steps {
                 script {
@@ -15,7 +16,7 @@ pipeline {
             }
         }
 
-        stage('test unitarios')
+        stage('test unitarios') {
             steps {
                 script {
                     sh "cd backend"
