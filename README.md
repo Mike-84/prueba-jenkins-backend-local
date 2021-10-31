@@ -1,11 +1,9 @@
-# pruebas jenkins local backend
+# Notas
 
-password para registro jenkins: 5ab6ad858fc549808be280eeeb74610d
+password para registro jenkins: 5ab6ad858fc549808be280eeeb74610d 
 
 
 Estos archivos están sacados del repo prueba jenkins frontend local
-
-
 
 
 ## Configurar
